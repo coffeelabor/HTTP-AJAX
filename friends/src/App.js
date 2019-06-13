@@ -3,6 +3,7 @@ import { Route } from "react-router-dom";
 import "./App.css";
 import axios from "axios";
 import FriendsList from "./components/FriendsList";
+import FriendForm from "./components/FriendForm";
 
 class App extends Component {
   state = {
@@ -26,6 +27,8 @@ class App extends Component {
             <FriendsList {...props} friends={this.state.friends} />
           )}
         />
+        {/* <FriendForm addFriend={this.addFriend} /> */}
+        <FriendForm />
       </div>
     );
   }
