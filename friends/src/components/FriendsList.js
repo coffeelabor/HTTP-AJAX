@@ -5,12 +5,11 @@ const FriendsList = props => {
   // const {age, email, id, name} = friend;
   return (
     <div>
-      {props.friends.map((friend, i) => (
-        <Friend key={i} friend={friend} />
+      {props.friends.map(friend => (
+        <Friend key={props.friends.id} friend={friend} />
       ))}
     </div>
   );
-  // return <div>hello</div>;
 };
 
 // function FriendsList(props) {

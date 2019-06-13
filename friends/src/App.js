@@ -3,6 +3,7 @@ import { Route } from "react-router-dom";
 import "./App.css";
 import axios from "axios";
 import FriendsList from "./components/FriendsList";
+import FriendForm from "./components/FriendForm";
 
 class App extends Component {
   state = {
@@ -16,6 +17,14 @@ class App extends Component {
       .catch(err => console.log(err));
   }
 
+  postFriend = (e, person) => {
+    e.preventDefault();
+    axios
+      .post("http://localhost:5000/friends", person)
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
+  };
+
   render() {
     return (
       <div className="App">
@@ -26,6 +35,8 @@ class App extends Component {
             <FriendsList {...props} friends={this.state.friends} />
           )}
         />
+        {/* <FriendForm addFriend={this.addFriend} /> */}
+        <FriendForm postFriend={this.postFriend} />
       </div>
     );
   }
