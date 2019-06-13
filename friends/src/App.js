@@ -17,6 +17,14 @@ class App extends Component {
       .catch(err => console.log(err));
   }
 
+  postFriend = (e, person) => {
+    e.preventDefault();
+    axios
+      .post("http://localhost:5000/friends", person)
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
+  };
+
   render() {
     return (
       <div className="App">
@@ -28,7 +36,7 @@ class App extends Component {
           )}
         />
         {/* <FriendForm addFriend={this.addFriend} /> */}
-        <FriendForm />
+        <FriendForm postFriend={this.postFriend} />
       </div>
     );
   }

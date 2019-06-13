@@ -1,6 +1,7 @@
 // import React from 'react';
 
 import React, { Component } from "react";
+import axios from "axios";
 
 class FriendForm extends Component {
   state = {
@@ -24,10 +25,28 @@ class FriendForm extends Component {
     return (
       <div>
         <form className="form">
-          <input type="text" name="name" placeholder="name" />
-          <input type="text" name="age" placeholder="age" />
-          <input type="text" name="email" placeholder="email" />
-          <button>submit</button>
+          <input
+            type="text"
+            name="name"
+            value={this.state.name}
+            placeholder="name"
+            onChange={this.handleChange}
+          />
+          <input
+            type="text"
+            name="age"
+            value={this.state.age}
+            placeholder="age"
+            onChange={this.handleChange}
+          />
+          <input
+            type="text"
+            name="email"
+            value={this.state.email}
+            placeholder="email"
+            onChange={this.handleChange}
+          />
+          <button type="submit">submit</button>
         </form>
       </div>
     );
