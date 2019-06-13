@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import "./App.css";
 import axios from "axios";
-import Friends from "./components/Friends";
+import FriendsList from "./components/FriendsList";
 
 class App extends Component {
   state = {
@@ -22,7 +22,9 @@ class App extends Component {
         <Route
           exact
           path="/"
-          render={props => <Friends {...props} friends={this.state.friends} />}
+          render={props => (
+            <FriendsList {...props} friends={this.state.friends} />
+          )}
         />
       </div>
     );
